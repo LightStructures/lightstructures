@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Light Structures and Consultancy since 2020</title>
+		<title>Project Gallery - Light Structures</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -55,40 +55,53 @@
 								<p>Crafting detailed drawings and calculations to streamline building regulations for residential and commercial ventures.</p>
 							</header>
 							<section class="tiles">
-								<article class="style1">
-									<span class="image">
-										<img src="images/1-Jump-Factory.jpg" alt="" />
-									</span>
-									<a href="generic.html?img=det-jump.jpg&text=Jump+Factory">
-										<h2>Jump Factory</h2>
-										<div class="content">
-											<p>An innovative approach to high residential building construction.</p>
-										</div>
-									</a>
-								</article>
-								<article class="style2">
-									<span class="image">
-										<img src="images/2-Westfield.jpg" alt="" />
-									</span>
-									<a href="generic.html?img=det-west.jpg&text=Westfield+Shopping+Centre">
-										<h2>Westfield Shopping Centre</h2>
-										<div class="content">
-											<p>Freeform steel skylight roof structure design.</p>
-										</div>
-									</a>
-								</article>
-								<article class="style3">
-									<span class="image">
-										<img src="images/pic03.jpg" alt="" />
-									</span>
-									<a href="generic.html?img=det-nch.jpg&text=National+Children+Hospital+Atrium">
-										<h2>National Children Hospital Atrium</h2>
-										<div class="content">
-											<p>Dome shaped steel structure with unique architectural form</p>
-										</div>
-									</a>
-								</article>
-								<!-- Diğer projeleri de aynı mantıkla link güncellenerek ekleyebilirim -->
+
+								<!-- Auto-generated project tiles -->
+								<script>
+									const projects = [
+										["Jump Factory", "jump", "det-jump"],
+										["Westfield Shopping Centre", "west", "det-west"],
+										["National Children Hospital", "nch", "det-nch"],
+										["Visual Control Tower", "vct", "det-vct"],
+										["Origine Skylight", "origine", "det-origine"],
+										["Vadi Istanbul Shopping Mall Skylight", "vadi1", "det-vadi1"],
+										["Vadi Istanbul Shopping Mall Canopy", "vadi2", "det-vadi2"],
+										["Antalya Expo 2015", "ant", "det-ant"],
+										["Sapareva Banya Therme", "banya", "det-banya"],
+										["Tashkent Lot 3 Skylight", "tash", "det-tash"],
+										["Medipol Hospital", "med", "det-med"],
+										["Maltepe Ilbank Canopy", "mal", "det-mal"],
+										["Lime Street Atrium Roof", "lime", "det-lime"],
+										["Istanbul Boshphorus Bridge", "bridge", "det-brigde"],
+										["Stade Annexe Roof", "stade", "det-stade"],
+										["Lagos Famma Oil Building", "lagos", "det-lagos"],
+										["Benga Riverside", "benga", "det-benga"]
+									];
+								</script>
+
+								<!-- Project Tiles -->
+								<div id="project-tiles"></div>
+
+								<script>
+									const container = document.getElementById("project-tiles");
+									projects.forEach(([name, img, bigImg], i) => {
+										const article = document.createElement("article");
+										article.className = `style${(i % 6) + 1}`;
+										article.innerHTML = `
+											<span class="image">
+												<img src="images/${img}.jpg" alt="${name}" />
+											</span>
+											<a href="generic.html?img=${bigImg}.jpg&text=${encodeURIComponent(name)}">
+												<h2>${name}</h2>
+												<div class="content">
+													<p>Click to see more details</p>
+												</div>
+											</a>
+										`;
+										container.appendChild(article);
+									});
+								</script>
+
 							</section>
 						</div>
 					</div>
