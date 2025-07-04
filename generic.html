@@ -59,6 +59,19 @@
 					</div>
 
 
+<span class="image main">
+  <img id="project-image" src="images/placeholder.jpg" alt="Detay görsel" />
+</span>
+<p id="project-text">Yükleniyor...</p>
+
+
+
+
+
+
+
+				
+
 				
 				<!-- Footer -->
 					<footer id="footer">
@@ -106,7 +119,20 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
+<script>
+  // URL parametrelerini oku
+  const params = new URLSearchParams(window.location.search);
+  const imgName = params.get("img") || "det-jump.jpg"; // default görsel
+  const text = params.get("text") || "Açıklama bulunamadı.";
 
+  // Görseli değiştir
+  const imgEl = document.getElementById("project-image");
+  imgEl.src = "images/" + imgName;
+
+  // Açıklamayı değiştir
+  const textEl = document.getElementById("project-text");
+  textEl.textContent = decodeURIComponent(text);
+</script>
 
 
 		
