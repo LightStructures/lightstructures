@@ -105,16 +105,35 @@
 			<script src="assets/js/main.js"></script>
 
 			<script>
-				// URL parametrelerini oku
 				const params = new URLSearchParams(window.location.search);
 				const imgName = params.get("img") || "placeholder.jpg";
-				const text = params.get("text") || "Project Details";
+				const projectKey = params.get("text") || "Default";
 
-				// Görseli değiştir
+				// Project descriptions dictionary
+				const descriptions = {
+					"Jump Factory": "An innovative approach to high residential building construction.",
+					"Westfield Shopping Centre": "Freeform steel skylight roof structure design.",
+					"National Children Hospital": "Dome shaped steel structure with unique architectural form.",
+					"Visual Control Tower": "Connection design of the tallest building in Dublin.",
+					"Origine Skylight": "Suspended freeform roof structure design in Paris.",
+					"Vadi Istanbul Shopping Mall Skylight": "Skylight design with 40 meters span and seismic resilience.",
+					"Vadi Istanbul Shopping Mall Canopy": "Canopy structures with long cantilever and elegant forms.",
+					"Antalya Expo 2015": "Steel superstructure on top of a concrete tower.",
+					"Sapareva Banya Therme": "Elegant spa roof design with lightweight structural system.",
+					"Tashkent Lot 3 Skylight": "Freeform steel skylight with complex geometry.",
+					"Medipol Hospital": "Structural design and analysis of large-scale hospital roofing.",
+					"Maltepe Ilbank Canopy": "Public canopy structure with unique architectural identity.",
+					"Lime Street Atrium Roof": "Steel atrium design in dense urban context.",
+					"Istanbul Boshphorus Bridge": "Restoration and detailing of iconic bridge elements.",
+					"Stade Annexe Roof": "Stadium roof with tension elements and large spans.",
+					"Lagos Famma Oil Building": "Steel façade and roof design for commercial development.",
+					"Benga Riverside": "Riverside structure with architectural steel elements."
+				};
+
+				// Update page
 				document.getElementById("project-image").src = "images/" + imgName;
-				// Başlık ve açıklamayı değiştir
-				document.getElementById("project-title").textContent = decodeURIComponent(text);
-				document.getElementById("project-description").textContent = decodeURIComponent(text) + " project description will be added here.";
+				document.getElementById("project-title").textContent = decodeURIComponent(projectKey);
+				document.getElementById("project-description").textContent = descriptions[decodeURIComponent(projectKey)] || "Project description coming soon.";
 			</script>
 
 	</body>
